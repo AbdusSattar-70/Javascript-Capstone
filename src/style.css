@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: rgba(8, 250, 225, 0.117);
+  background-blend-mode: hard-light;
+}
+
+.headerUl {
+  display: flex;
+  gap: 2rem;
+}
+
+.headerUl li {
+  font-size: 2rem;
+  color: rgb(123, 8, 253);
+}
+
+.headerUl li:hover,
+.headerUl li:focus {
+  color: red;
+  background-color: aliceblue;
+}
+
+#logo {
+  width: 3%;
+  height: 3%;
+}
