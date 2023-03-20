@@ -6,6 +6,12 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+footer{
+  text-align: center;
+  margin-top: 80vh;  
 }
 
 .header {
