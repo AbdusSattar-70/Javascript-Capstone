@@ -1,6 +1,6 @@
-const displayMeals = async (data,heart) => {
+const displayMeals = async (data, heart) => {
   const mealsContainer = document.querySelector('.meals-container');
-  data.meals.forEach(meal => {
+  data.meals.forEach((meal) => {
     const item = document.createElement('div');
     mealsContainer.appendChild(item);
     item.className = 'meal';
