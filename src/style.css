@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/wonderbar');
+@import url("https://fonts.cdnfonts.com/css/wonderbar");
 
 *,
 *::before,
@@ -12,7 +12,7 @@
 }
 
 h1 {
-  font-family: 'Wonderbar', sans-serif;
+  font-family: "Wonderbar", sans-serif;
   text-align: center;
   font-size: 5vw;
   font-weight: 500;
@@ -104,6 +104,10 @@ footer {
 .likeBtn {
   background-color: white;
   border: none;
+}
+
+.commentImg {
+  width: 20%;
 }
 
 @media screen and (max-width: 768px) {
