@@ -85,12 +85,20 @@ footer {
 }
 
 #mealTitle {
-  margin-right: 0.8rem;
   font-size: 1.5rem;
 }
 
 #like {
   width: 20px;
+}
+
+#likesCounter {
+  font-size: 1rem;
+}
+
+#mealTitle,
+.likeBtn {
+  margin-right: 0.8rem;
 }
 
 .likeBtn {

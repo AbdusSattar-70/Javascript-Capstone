@@ -5,7 +5,7 @@ const displayMeals = async (data, heart) => {
     mealsContainer.appendChild(item);
     item.className = 'meal';
     item.insertAdjacentHTML('beforeend', `<img id="mealImg" src=${meal.strMealThumb}>
-    <p><span id="mealTitle">${meal.strMeal}</span><button type="button" class="likeBtn"><img src="${heart}" alt="heart" id="like"></button></p>
+    <p><span id="mealTitle">${meal.strMeal}</span><button type="button" class="likeBtn"><img src="${heart}" alt="heart" id="like"></button><span id="likesCounter">0</span>Likes</p>
     <button type="button" class="comment">Comment</button>
     <button type="button" class="reserve">Reservation</button>`);
   });
