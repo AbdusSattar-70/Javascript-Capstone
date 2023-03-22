@@ -12,7 +12,13 @@
 }
 
 body {
-  background-color: rgba(12, 139, 229, 0.803);
+  background: rgb(34, 193, 195);
+  background:
+    linear-gradient(
+      0deg,
+      rgba(34, 193, 195, 1) 0%,
+      rgba(253, 187, 45, 1) 100%
+    );
 }
 
 h1 {
@@ -24,6 +30,15 @@ h1 {
 
 button {
   cursor: pointer;
+}
+
+form button {
+  height: 2rem;
+  width: 45%;
+  color: rgb(10, 10, 10);
+  font-size: 1.2rem;
+  border-radius: 5%;
+  background-color: rgb(249, 250, 248);
 }
 
 footer {
@@ -115,17 +130,25 @@ footer {
 }
 
 .poUpCountainer {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   z-index: 1;
   align-items: center;
-  background-color: rgba(148, 7, 242, 0.86);
+  background: rgb(63, 94, 251);
+  background:
+    radial-gradient(
+      circle,
+      rgba(63, 94, 251, 1) 0%,
+      rgba(252, 70, 107, 1) 100%
+    );
   padding: 2rem;
   width: 90vw;
   left: 5%;
   top: 5%;
+  height: 90vh;
+  overflow-y: auto;
 }
 
 .cross {
@@ -142,11 +165,19 @@ footer {
 }
 
 .imgContainer {
-  width: 60%;
+  width: 50%;
 }
 
 .commentImg {
-  width: 80%;
+  width: 100%;
+  border-radius: 3%;
+  transition-duration: 2s;
+}
+
+.commentImg:hover {
+  transform: scale(1.1);
+  transition-duration: 3s;
+  border: 1px solid red;
 }
 
 .description {
@@ -158,6 +189,11 @@ footer {
 .descrip1 p,
 .descrip2 p {
   margin: 0.5rem;
+}
+
+.description a {
+  font-weight: 700;
+  color: rgb(127, 251, 4);
 }
 
 .commentSection {
