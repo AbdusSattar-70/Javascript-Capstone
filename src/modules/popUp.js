@@ -54,8 +54,8 @@ const createPopUp = async (data, index) => {
   const id = index + 1;
   const items = `
       <div class="poUpCountainer">
-          <div class ="imgContainer">
           <img class="cross" src="${cross}" alt="">
+          <div class ="imgContainer">
           <img class="commentImg" src="${data.strMealThumb}" alt="">
           </div>
           <h2 class="title">${data.strMeal}</h2>
