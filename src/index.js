@@ -1,15 +1,28 @@
 import './style.css';
 import Logo from './asset/logo.png';
-import heart from './asset/heart.png';
 import displayMeals from './modules/displayMeals.js';
+import {
+  header, mainDisplayContainer, commentContainer,
+  createPopUp,
+} from './modules/popUp.js';
 import fetchMeals from './modules/fetchMeals.js';
-import { ApiUrlSearch } from './modules/API.js';
 
 const logo = document.querySelector('#logo');
 logo.src = Logo;
 
-window.onload = async () => {
-  fetchMeals(ApiUrlSearch);
-  const data = await fetchMeals(ApiUrlSearch);
-  displayMeals(data, heart);
+displayMeals();
+const displayPopUp = async () => {
+  const data = await fetchMeals();
+  const commentBtns = document.querySelectorAll('.comment');
+  commentBtns.forEach((commentBtn, index) => {
+    commentBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const meal = data.meals[index];
+      await createPopUp(meal, index);
+      commentContainer.style.display = 'block';
+      mainDisplayContainer.style.display = 'none';
+      header.style.display = 'none';
+    });
+  });
 };
+displayPopUp();
