@@ -59,24 +59,23 @@ const createPopUp = async (data, index) => {
           <img class="commentImg" src="${data.strMealThumb}" alt="">
           </div>
           <h2 class="title">${data.strMeal}</h2>
+           <p><strong>Category: </strong>${data.strCategory}</p>
           <div class="Ingredients">
-              <p class="Ingredients1"><strong>Ingredients: </strong>${data.strIngredient1},  ${data.strIngredient2},  ${data.strIngredient3},  ${data.strIngredient4},  ${data.strIngredient5}</p>
+            <p class="Ingredients1"><strong>Ingredients: </strong>${data.strIngredient1},  ${data.strIngredient2},  ${data.strIngredient3},  ${data.strIngredient4},  ${data.strIngredient5}</p>
           </div>
-          <div class= "Measure">
-           <p> <strong>Measurement:</strong> ${data.strMeasure1}, ${data.strMeasure2}, ${data.strMeasure3}, ${data.strMeasure4}</p>
-          </div>
-          <div class= "source">
-           <p> <strong> Source: </strong><a href="${data.strSource}" target="_blank">Check Here</a></p>
-          </div>
-          <div class= "youtube">
+          <div class= "description">
+           <div class="descrip1">
+            <p> <strong>Measurement:</strong> ${data.strMeasure1}, ${data.strMeasure2}, ${data.strMeasure3}, ${data.strMeasure4}</p>
+            <p> <strong> Source: </strong><a href="${data.strSource}" target="_blank">Check Here</a></p>
+           </div>
+           <div class="descrip1">
            <p><strong> Video : </strong><a href="${data.strYoutube}" target="_blank">See Live</a></p>
-          </div>
-          <div class ="instructions">
-            <p><strong>How to Make: </strong>${data.strInstructions}</p>
-          </div>
+           <p><strong>Area: </strong>${data.strArea}</p>
+           </div>
+           </div>
           <div class="commentSection">
           <h3>Comments(<span id="commentCounts-${id}">0</span>)</h3>
-          <ul class="commentList-${id}">
+          <ul class="commentList-${id} commentUL">
 
           </ul>
           <h4>Add a comment</h4>
