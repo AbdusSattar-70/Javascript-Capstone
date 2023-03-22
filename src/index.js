@@ -1,31 +1,33 @@
-import './style.css';
-import Logo from './asset/logo.png';
-import displayMeals from './modules/displayMeals.js';
+import "./style.css";
+import Logo from "./asset/logo.png";
+import displayMeals from "./modules/displayMeals.js";
 import {
-  header, mainDisplayContainer, commentContainer,
+  header,
+  mainDisplayContainer,
+  commentContainer,
   createPopUp,
-} from './modules/popUp.js';
-import fetchMeals from './modules/fetchMeals.js';
-import { displayLikes } from './modules/displayLikes.js';
-import likeItem from './modules/likeItem.js';
+} from "./modules/popUp.js";
+import fetchMeals from "./modules/fetchMeals.js";
+import likeItem from "./modules/likeItem.js";
+import homepageCounter from "./modules/homepageCounter.js";
 
-const logo = document.querySelector('#logo');
+const logo = document.querySelector("#logo");
 logo.src = Logo;
 
 displayMeals();
-displayLikes();
 likeItem();
+homepageCounter();
 const displayPopUp = async () => {
   const data = await fetchMeals();
-  const commentBtns = document.querySelectorAll('.comment');
+  const commentBtns = document.querySelectorAll(".comment");
   commentBtns.forEach((commentBtn, index) => {
-    commentBtn.addEventListener('click', async (e) => {
+    commentBtn.addEventListener("click", async (e) => {
       e.preventDefault();
       const meal = data.meals[index];
       await createPopUp(meal, index);
-      commentContainer.style.display = 'block';
-      mainDisplayContainer.style.display = 'none';
-      header.style.display = 'none';
+      commentContainer.style.display = "block";
+      mainDisplayContainer.style.display = "none";
+      header.style.display = "none";
     });
   });
 };
