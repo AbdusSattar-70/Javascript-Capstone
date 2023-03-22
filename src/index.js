@@ -6,13 +6,15 @@ import {
   createPopUp,
 } from './modules/popUp.js';
 import fetchMeals from './modules/fetchMeals.js';
-import displayLikes from './modules/displayLikes.js';
+import { displayLikes } from './modules/displayLikes.js';
+import likeItem from './modules/likeItem.js';
 
 const logo = document.querySelector('#logo');
 logo.src = Logo;
 
 displayMeals();
 displayLikes();
+likeItem();
 const displayPopUp = async () => {
   const data = await fetchMeals();
   const commentBtns = document.querySelectorAll('.comment');
