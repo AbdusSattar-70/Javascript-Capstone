@@ -11,6 +11,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  background-color: rgba(12, 139, 229, 0.803);
+}
+
 h1 {
   font-family: "Wonderbar", sans-serif;
   text-align: center;
@@ -44,6 +48,10 @@ footer {
 .headerUl li {
   font-size: 2rem;
   color: rgb(123, 8, 253);
+}
+
+.commentUL li {
+  background-color: aliceblue;
 }
 
 .headerUl li:hover,
@@ -106,8 +114,86 @@ footer {
   border: none;
 }
 
+.poUpCountainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 1;
+  align-items: center;
+  background-color: rgba(148, 7, 242, 0.86);
+  padding: 2rem;
+  width: 90vw;
+  left: 5%;
+  top: 5%;
+}
+
+.cross {
+  width: 3rem;
+  position: absolute;
+  right: 0;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.cross:hover {
+  background-color: aliceblue;
+  box-shadow: 5px 5px 5px rgba(140, 137, 134, 0.462);
+}
+
+.imgContainer {
+  width: 60%;
+}
+
 .commentImg {
-  width: 20%;
+  width: 80%;
+}
+
+.description {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.descrip1 p,
+.descrip2 p {
+  margin: 0.5rem;
+}
+
+.commentSection {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+h2,
+h3,
+h4 {
+  font-size: 2.5rem;
+}
+
+.commentUL {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  height: 2rem;
+}
+
+input,
+textarea {
+  padding: 1rem;
 }
 
 @media screen and (max-width: 768px) {
