@@ -12,4 +12,4 @@ const displayLikes = async () => {
     span.textContent = likes[i].likes;
   });
 };
-export {fetchLikes,displayLikes};
+export { fetchLikes, displayLikes };
