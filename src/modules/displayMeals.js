@@ -1,5 +1,6 @@
 import fetchMeals from './fetchMeals.js';
 import heart from '../asset/heart.png';
+import { displayLikes } from './displayLikes.js';
 
 const displayMeals = async () => {
   const data = await fetchMeals();
@@ -13,6 +14,7 @@ const displayMeals = async () => {
     <button type="button" class="comment">Comment</button>
     <button type="button" class="reserve">Reservation</button>`);
   });
+  displayLikes();
 };
 
 export default displayMeals;

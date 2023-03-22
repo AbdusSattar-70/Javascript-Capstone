@@ -6,15 +6,15 @@ import {
   header, mainDisplayContainer, commentContainer, footer,
 } from './modules/closePopUp.js';
 import fetchMeals from './modules/fetchMeals.js';
-import { displayLikes } from './modules/displayLikes.js';
 import likeItem from './modules/likeItem.js';
+import homepageCounter from './modules/homepageCounter.js';
 
 const logo = document.querySelector('#logo');
 logo.src = Logo;
 
 displayMeals();
-displayLikes();
 likeItem();
+homepageCounter();
 const displayPopUp = async () => {
   const data = await fetchMeals();
   const commentBtns = document.querySelectorAll('.comment');
