@@ -1,4 +1,7 @@
-const likeItem = (likes, involvmentApiUrlLikes) => {
+import { involvmentApiUrlLikes } from "./API.js";
+import { fetchLikes } from "./displayLikes.js";
+const likeItem = async() => {
+  const likes = await fetchLikes()
   const likeBtn = document.querySelectorAll('.likeBtn');
   const likeCount = document.querySelectorAll('#likesCounter');
   likeBtn.forEach((btn, i) => {

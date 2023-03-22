@@ -1,4 +1,8 @@
-const displayMeals = async (data, heart) => {
+import fetchMeals from './fetchMeals.js';
+import heart from '../asset/heart.png';
+
+const displayMeals = async () => {
+  const data = await fetchMeals();
   const mealsContainer = document.querySelector('.meals-container');
   data.meals.forEach((meal) => {
     const item = document.createElement('div');
@@ -10,4 +14,5 @@ const displayMeals = async (data, heart) => {
     <button type="button" class="reserve">Reservation</button>`);
   });
 };
+
 export default displayMeals;
