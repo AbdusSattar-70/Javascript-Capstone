@@ -1,24 +1,12 @@
 import { involvmentApiUrlComments } from './API.js';
 import cross from '../asset/cross.png';
-
-const commentContainer = document.querySelector('.popUpComments');
-const mainDisplayContainer = document.querySelector('.mainDisplayContainer');
-const header = document.querySelector('.header');
+import commentCounter from './commentCounter.js';
+import { commentContainer, closePopUp } from './closePopUp.js';
 
 const getCommetsFromApi = async (url, id) => {
   const res = await fetch(`${url}?item_id=${id}`);
   const comments = await res.json();
   return comments;
-};
-
-const closePopUp = () => {
-  const crossBtn = document.querySelector('.cross');
-  crossBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    commentContainer.style.display = 'none';
-    header.style.display = 'flex';
-    mainDisplayContainer.style.display = 'block';
-  });
 };
 
 const displayComment = async (id) => {
@@ -32,9 +20,7 @@ const displayComment = async (id) => {
   comments.forEach((comment) => {
     commentList.innerHTML += `<li>${comment.creation_date} :${comment.username} : ${comment.comment}</li> `;
   });
-
-  const commentCounts = document.querySelector(`#commentCounts-${id}`);
-  commentCounts.innerText = comments.length;
+  await commentCounter(comments, id);
 };
 
 const postCommentOnApi = async (url, id, username, comment) => {
@@ -68,29 +54,28 @@ const createPopUp = async (data, index) => {
   const id = index + 1;
   const items = `
       <div class="poUpCountainer">
-          <div class ="imgContainer">
           <img class="cross" src="${cross}" alt="">
+          <div class ="imgContainer">
           <img class="commentImg" src="${data.strMealThumb}" alt="">
           </div>
           <h2 class="title">${data.strMeal}</h2>
+           <p><strong>Category: </strong>${data.strCategory}</p>
           <div class="Ingredients">
-              <p class="Ingredients1"><strong>Ingredients: </strong>${data.strIngredient1},  ${data.strIngredient2},  ${data.strIngredient3},  ${data.strIngredient4},  ${data.strIngredient5}</p>
+            <p class="Ingredients1"><strong>Ingredients: </strong>${data.strIngredient1},  ${data.strIngredient2},  ${data.strIngredient3},  ${data.strIngredient4},  ${data.strIngredient5}</p>
           </div>
-          <div class= "Measure">
-           <p> <strong>Measurement:</strong> ${data.strMeasure1}, ${data.strMeasure2}, ${data.strMeasure3}, ${data.strMeasure4}</p>
-          </div>
-          <div class= "source">
-           <p> <strong> Source: </strong><a href="${data.strSource}" target="_blank">Check Here</a></p>
-          </div>
-          <div class= "youtube">
+          <div class= "description">
+           <div class="descrip1">
+            <p> <strong>Measurement:</strong> ${data.strMeasure1}, ${data.strMeasure2}, ${data.strMeasure3}, ${data.strMeasure4}</p>
+            <p> <strong> Source: </strong><a href="${data.strSource}" target="_blank">Check Here</a></p>
+           </div>
+           <div class="descrip1">
            <p><strong> Video : </strong><a href="${data.strYoutube}" target="_blank">See Live</a></p>
-          </div>
-          <div class ="instructions">
-            <p><strong>How to Make: </strong>${data.strInstructions}</p>
-          </div>
+           <p><strong>Area: </strong>${data.strArea}</p>
+           </div>
+           </div>
           <div class="commentSection">
           <h3>Comments(<span id="commentCounts-${id}">0</span>)</h3>
-          <ul class="commentList-${id}">
+          <ul class="commentList-${id} commentUL">
 
           </ul>
           <h4>Add a comment</h4>
@@ -106,6 +91,4 @@ const createPopUp = async (data, index) => {
   await displayComment(id);
 };
 
-export {
-  commentContainer, header, mainDisplayContainer, createPopUp,
-};
+export default createPopUp;
