@@ -1,24 +1,12 @@
 import { involvmentApiUrlComments } from './API.js';
 import cross from '../asset/cross.png';
-
-const commentContainer = document.querySelector('.popUpComments');
-const mainDisplayContainer = document.querySelector('.mainDisplayContainer');
-const header = document.querySelector('.header');
+import commentCounter from './commentCounter.js';
+import { commentContainer, closePopUp } from './closePopUp.js';
 
 const getCommetsFromApi = async (url, id) => {
   const res = await fetch(`${url}?item_id=${id}`);
   const comments = await res.json();
   return comments;
-};
-
-const closePopUp = () => {
-  const crossBtn = document.querySelector('.cross');
-  crossBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    commentContainer.style.display = 'none';
-    header.style.display = 'flex';
-    mainDisplayContainer.style.display = 'block';
-  });
 };
 
 const displayComment = async (id) => {
@@ -32,9 +20,7 @@ const displayComment = async (id) => {
   comments.forEach((comment) => {
     commentList.innerHTML += `<li>${comment.creation_date} :${comment.username} : ${comment.comment}</li> `;
   });
-
-  const commentCounts = document.querySelector(`#commentCounts-${id}`);
-  commentCounts.innerText = comments.length;
+  await commentCounter(comments, id);
 };
 
 const postCommentOnApi = async (url, id, username, comment) => {
@@ -106,6 +92,4 @@ const createPopUp = async (data, index) => {
   await displayComment(id);
 };
 
-export {
-  commentContainer, header, mainDisplayContainer, createPopUp,
-};
+export default createPopUp;

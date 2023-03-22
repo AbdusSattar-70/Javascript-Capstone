@@ -1,10 +1,8 @@
 import './style.css';
 import Logo from './asset/logo.png';
 import displayMeals from './modules/displayMeals.js';
-import {
-  header, mainDisplayContainer, commentContainer,
-  createPopUp,
-} from './modules/popUp.js';
+import createPopUp from './modules/popUp.js';
+import { header, mainDisplayContainer, commentContainer } from './modules/closePopUp.js';
 import fetchMeals from './modules/fetchMeals.js';
 import { displayLikes } from './modules/displayLikes.js';
 import likeItem from './modules/likeItem.js';
