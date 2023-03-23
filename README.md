@@ -7,8 +7,8 @@
 
 <div align="center">
 <h3><b>screenshot</b></h3>
-<img src="asset/Screenshot1.png" alt="screenshoot" width="140"  height="auto"/>
-<img src="asset/Screenshot2.png" alt="screenshoot" width="140"  height="auto"/>
+<img src="src/asset/Screenshot1.png" alt="screenshoot" width="500"  height="auto"/>
+<img src="src/asset/Screenshot2.png" alt="screenshoot" width="500"  height="auto"/>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -72,9 +72,9 @@
 
 <!-- Features -->
 
-## Key Features <a name="key-features"></a>
+# 💻 Key Features <a name="key-features"></a>
 
-- [Home page]:
+## Home page:
 - When the page loads, the webapp retrieves data from:
 - The selected API and shows the list of items on screen.
 - The Involvement API to show the item likes.
@@ -84,7 +84,7 @@
 - When the user clicks on the Like button of an item, the interaction is recorded in the Involvement API and the screen is updated.
 - Home page header and navigation similar to the given mockup.
 - Home page footer similar to the given mockup.
-- [Comments popup]
+## Comments popup:
 - When the popup loads, the webapp retrieves data from:
 - The selected API and shows details about the selected item.
 - The Involvement API to show the item comments.
@@ -138,11 +138,12 @@ Install this project with:
 
 To run tests and check errors, run the following command:
 
-- To check Styelint error:-
+- To Test:-
 
 ```bash
    npm test
 ```
+- To check Styelint error:-
 
 ```bash
    npx stylelint "\*_/_.{css,scss}"
