@@ -94,9 +94,10 @@
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo<a name="live-demo"></a>
+## 🚀 Live Demo and Project presentation video<a name="live-demo"></a>
 
 - [Live Demo Link](https://abdussattar-70.github.io/Javascript-Capstone/dist)
+- [Project presentation video](https://drive.google.com/file/d/1kaYJMSJTVw_1eVmV7t0yXi16nr7BfXx0/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
