@@ -1,5 +1,4 @@
 import { involvmentApiUrlComments } from './API.js';
-import cross from '../asset/cross.png';
 import commentCounter from './commentCounter.js';
 import { commentContainer, closePopUp } from './closePopUp.js';
 
@@ -54,23 +53,25 @@ const createPopUp = async (data, index) => {
   const id = index + 1;
   const items = `
       <div class="poUpCountainer">
-          <img class="cross" src="${cross}" alt="">
+           <i class="fa-regular fa-x cross"></i>
           <div class ="imgContainer">
           <img class="commentImg" src="${data.strMealThumb}" alt="">
           </div>
           <h2 class="title">${data.strMeal}</h2>
-           <p><strong>Category: </strong>${data.strCategory}</p>
+          <p><strong>Meal Area: </strong>${data.strArea}</p>
+          <p><strong>Meal Category: </strong>${data.strCategory}</p> 
           <div class="Ingredients">
             <p class="Ingredients1"><strong>Ingredients: </strong>${data.strIngredient1},  ${data.strIngredient2},  ${data.strIngredient3},  ${data.strIngredient4},  ${data.strIngredient5}</p>
           </div>
           <div class= "description">
            <div class="descrip1">
-            <p> <strong>Measurement:</strong> ${data.strMeasure1}, ${data.strMeasure2}, ${data.strMeasure3}, ${data.strMeasure4}</p>
-            <p> <strong> Source: </strong><a href="${data.strSource}" target="_blank">Check Here</a></p>
+            <p><strong>Meal Tags: </strong>${data.strTags}</p>
+            <p> <strong>Measurement:</strong> ${data.strMeasure1}, ${data.strMeasure2}, ${data.strMeasure3}, ${data.strMeasure4},${data.strMeasure5}</p>
            </div>
            <div class="descrip1">
            <p><strong> Video : </strong><a href="${data.strYoutube}" target="_blank">See Live</a></p>
-           <p><strong>Area: </strong>${data.strArea}</p>
+           <p> <strong> Source: </strong><a href="${data.strSource}" target="_blank">Check Here</a></p>
+    
            </div>
            </div>
           <div class="commentSection">
@@ -80,8 +81,8 @@ const createPopUp = async (data, index) => {
           </ul>
           <h4>Add a comment</h4>
           <form class="form-${id}" action="submit" >
-              <input type="text" placeholder="Your name" name="username" required>
-              <textarea cols="15" rows="4" placeholder="Your insight" name="commentText" required></textarea>
+              <input id="comment-input" type="text" placeholder="Your name" name="username" required>
+              <textarea id="comment-input" cols="15" rows="4" placeholder="Your insight" name="commentText" required></textarea>
               <button type="submit">Comment</button>
           </form>
           </div>`;
