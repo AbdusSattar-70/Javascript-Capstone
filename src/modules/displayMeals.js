@@ -12,7 +12,7 @@ const displayMeals = async () => {
     item.insertAdjacentHTML('beforeend', `<img id="mealImg" src=${meal.strMealThumb}>
     <p><span id="mealTitle">${meal.strMeal}</span><button type="button" class="likeBtn"><img src="${heart}" alt="heart" id="like"></button><span id="likesCounter"></span>Likes</p>
     <button type="button" class="comment">Comment</button>
-    <button type="button" class="reserve">Reservation</button>`);
+    <button type="button" class="reserve">Order Meal</button>`);
   });
   displayLikes();
 };
