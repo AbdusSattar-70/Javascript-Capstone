@@ -183,9 +183,9 @@ You can deploy this project using:
 
 ## 👤 Kevin Toro
 
-- GitHub: [Kevin Toro](https://github.com/KevinToro)
-- Twitter: [Kevin Toro](https://twitter.com/KevinToro)
-- LinkedIn: [Kevin Toro](https://www.linkedin.com/in/KevinToro-a41a26215/)
+- GitHub: [@torobucii](https://github.com/torobucii)
+- Twitter: [@torobucii](https://twitter.com/@torobucii)
+- LinkedIn: [Kevin Toro](https://linkedin.com/in/KevinToro)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
